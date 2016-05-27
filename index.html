@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="build/css/vendor.css">
+    <link rel="stylesheet" href="build/css/styles.css">
+    <script src="build/js/vendor.min.js"></script>
+    <script type="text/javascript" src="build/js/app.js"></script>
+    <title>Weather</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Get Weather Conditions From Anywhere!</h1>
+      <div class="box">
+        <label for="location">Enter a location:</label>
+        <input id="location" type="text">
+        <button class="button" id="humidityButton">Get Current Humidity!</button>
+        <button class="button" id="temperatureButton">Get Current Temperature!</button>
+        <button class="button" id="forecastButton">Get forecast!</button>
+        <div class="showWeather"></div>
+        <div class="showTempKelvin"></div>
+        <div class="showTempcelsius">
+        </div>
+        <div class="showTempFahrenheit">
+        </div>
+        <a id="celsiusHide">​°F​</a>
+        <a  id="fahrenheitHide">​°C</a>
+        <div class="showForecast"></div>
+      </div>
+    </div>
+  </body>
+</html>
