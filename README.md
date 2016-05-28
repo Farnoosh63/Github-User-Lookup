@@ -9,10 +9,10 @@
 
 ## __Description__
 
-###### This is an application to return the GitHub public information from a username that being searched. The information that this app will get through the Github API are;
+###### This is an application to return the GitHub public information from a username that being searched. Information shown by this app through Github API are;
 1. username
-2. Full name
-3. Repository name
+2. full name
+3. repository name
 4. profile picture
 5. repository description
 6. http link to the repository
@@ -51,7 +51,9 @@ enjoy!
 ```
 ###### if you have access to your personal github account, you may use your personal Access tokens.
 
-![api_image](https://mylinks.linkcreationstudio.com/developer/assets/img/icon_documentation.png)
+
+Creating Personal Access Tokens
+---------------------------------
 - [x] login to your github account and go to setting
 - [x] select Personal Access Tokens from the sidebar, and hit Generate New Token
 - [x] Select Generate Token with no options checked to receive a unique access token.
