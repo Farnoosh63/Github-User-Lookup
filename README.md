@@ -63,7 +63,8 @@ Creating Personal Access Tokens
 `exports.apiKey="YOUR-ACCESS-TOKEN";`
 
 
-### Legal
+Legal
+------
 
 _*Copyright (c) 2016 Farnoosh Johnson- Student in Epicodus*_
 

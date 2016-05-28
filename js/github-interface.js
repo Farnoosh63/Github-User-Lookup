@@ -26,8 +26,9 @@ var displayUserName = function(userName, UserNameData, fullNameData,avatarData, 
 
 };
 
-var displayDescription = function(userName, descriptionData, htmlData) {
-  $('.showDescription').text("description: " + descriptionData );
-  $('.showhtml').append("<a href='"+htmlData+"'>" );
+var displayDescription = function(userName,number,repoName, descriptionData, htmlData) {
+  $('.showRepo').append("<br><strong>reposiroty #"+number+"</strong> is "+repoName +" And <em>description is: "+ descriptionData +"</em>"+"<a href='" + htmlData+ "'"+">"+ " link to "+repoName);
+//  $('.showDescription').text("description: " + descriptionData );
+//    $('.showhtml').append("<a href='"+htmlData+"'>" );
 
 };
