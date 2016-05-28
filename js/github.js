@@ -20,7 +20,10 @@ exports.Repo.prototype.getRepo =function(userName, displayFunction){
 exports.Repo.prototype.getAllRepo = function(userName, displayFunction){
   $.get('https://api.github.com/users/'+ userName+ '/repos').then(function(repos_url){
     for(var i = 0; i<repos_url.length; i++){
-      displayFunction(userName,i+1,repos_url[i].name, repos_url[i].description, repos_url[i].html_url);
+      var time = moment(repos_url[i].created_at).format("MMM Do YYYY");
+      displayFunction(userName,i+1,repos_url[i].name,time,repos_url[i].description, repos_url[i].html_url);
+     console.log(JSON.stringify(time));
+
     }
   }).fail(function(error) {
     $('.showRepo').text(error.responseJSON.message);

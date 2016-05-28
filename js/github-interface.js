@@ -3,7 +3,6 @@ var Repo = require('../js/github.js').Repo;
 $(document).ready(function() {
   var repoObject =new Repo();
   $('#submit').click(function(event) {
-    // $("#solution").reset();
 
     $("#solution").show();
     event.preventDefault();
@@ -26,9 +25,6 @@ var displayUserName = function(userName, UserNameData, fullNameData,avatarData, 
 
 };
 
-var displayDescription = function(userName,number,repoName, descriptionData, htmlData) {
-  $('.showRepo').append("<br><strong>reposiroty #"+number+"</strong> is "+repoName +" And <em>description is: "+ descriptionData +"</em>"+"<a href='" + htmlData+ "'"+">"+ " link to "+repoName);
-//  $('.showDescription').text("description: " + descriptionData );
-//    $('.showhtml').append("<a href='"+htmlData+"'>" );
-
+var displayDescription = function(userName,number,repoName, time, descriptionData, htmlData) {
+  $('.showRepo').append("<br><strong>reposiroty #"+number+"</strong> is "+repoName +" created at: "+ time + ", And <em>description is: "+ descriptionData +"</em>"+"<a href='" + htmlData+ "'"+">"+ " link to "+repoName);
 };
