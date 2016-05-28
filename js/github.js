@@ -1,30 +1,34 @@
 var apiKey = require('./../.env').apiKey;
-exports.Temperature = function() {
 
-};
+exports.Repo = function() {};
 
-exports.Temperature.prototype.getTemperature = function(city,displayFunction){
-  $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey).then(function(response) {
-    // var celsius = temp.convertCelsius(response);
-    // var fahrenheit = temp.convertFahrenheit(response);
+exports.Repo.prototype.getRepo =function(userName, displayFunction){
+  $.get('https://api.github.com/users/' + userName +'?access_token='+apiKey).then(function(response){
+    displayFunction(userName, response.login, response.name, response.repos_url);
+    // displayFullName(userName, response.name);
 
-    // $('.showTempKelvin').text("The temperature in " + city + " is " + response.main.temp + " degrees Kelvin!\n");
-    // $('.showTempcelsius').text("\nThe temperature in " + city + " is " + celsius + " degrees celsius!\n");
-    // $('.showTempFahrenheit').text("The temperature in " + city + " is " + fahrenheit + " degrees Fahrenheit!");
-    // return response.main.temp;
-    displayFunction(city, response.main.temp);
-    console.log(JSON.stringify(response));
-  }).fail(function(error) {
-    $('.showTemp').text(error.responseJSON.message);
+
+    // var img = response.avatar_url;
+    // console.log(img);
+
+    // $('.showUserName').text("Username:" + response.login );
+
+    //
+    // $('.myCanvas').text("href=" +"'"+img+"'");
+
+  }).fail(function(error){
+    $('.showUserName').text(error.responseJSON.message);
+
   });
-}
 
-exports.Temperature.prototype.convertCelsius = function(kelvin) {
-  var celsius = Math.round(kelvin- 273.15);
-  return celsius;
 };
+exports.Repo.prototype.getAllRepo = function(userName, displayFunction){
+  $.get('https://api.github.com/users/'+ userName+ '/repos').then(function(repos_url){
+    for(var i = 0; i<repos_url.length; i++){
+    $('.showRepo').append("<br>reposiroty #"+(i+1) + " is " + repos_url[i].name + " And description is: "+ repos_url[i].description);
+  } 
+    }).fail(function(error) {
+      $('.showRepo').text(error.responseJSON.message);
+    });
 
-exports.Temperature.prototype.convertFahrenheit = function(kelvin) {
-  var fahrenheit = Math.round((kelvin*9 / 5) - 459.67);
-  return fahrenheit;
 };
