@@ -16,6 +16,7 @@
 4. profile picture
 5. repository description
 6. http link to the repository
+7. date the repo created in the format of "MMM Do YYYY"// May 28th 2016
 
 > You may use this application as an example to show the proficiency of a level 2 student in Epicodus.
 
