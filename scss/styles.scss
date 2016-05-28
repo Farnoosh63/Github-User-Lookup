@@ -1,14 +1,28 @@
-$gray : #d3d3d3;
-$green : #75B975;
+$gray : #adad85;
 
-.box {
-  background: $gray;
-  border: 3px solid black;
-  padding: 40px 80px;
-  .button {
-    font-weight: bold;
-    text-align: center;
-    background: $green;
-    color: white;
+
+img.showImage {
+  margin-top: 15px;
+  width: 385px;
+  height: 385px;
+  padding: 15px;
+  border: dotted $gray;
+  margin-left: 25%;
+}
+
+.starter-template {
+  padding-bottom: 5%;
+}
+
+.container{
+  #head {
+    line-height: 20px;
   }
+
+  h2{
+    padding-bottom: 20px;
+  }
+}
+.jumbotron {
+  background-color: transparent;
 }
