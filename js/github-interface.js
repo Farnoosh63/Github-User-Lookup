@@ -11,13 +11,11 @@ $(document).ready(function() {
     $('#userName').val("");
     repoObject.getRepo(userName,displayUserName);
     repoObject.getAllRepo(userName, displayDescription);
-    // repoObject.getAllRepo(userName, displayImage);
 
     //refresh the page when the user want to look for another userName
     $('#userName').click(function() {
-       window.location.reload();
-      //  $("#solution").hide();
-     });
+      window.location.reload();
+    });
   });
 });
 
@@ -26,9 +24,10 @@ var displayUserName = function(userName, UserNameData, fullNameData,avatarData, 
   $('.showFullName').text("Full name:" + fullNameData );
   $('.showImage').append("<img src='"+avatarData+"'>" );
 
-
 };
 
-var displayDescription = function(userName, descriptionData) {
-    $('.showDescription').text("description: " + descriptionData );
+var displayDescription = function(userName, descriptionData, htmlData) {
+  $('.showDescription').text("description: " + descriptionData );
+  $('.showhtml').append("<a href='"+htmlData+"'>" );
+
 };

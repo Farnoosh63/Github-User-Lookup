@@ -1,6 +1,4 @@
 var apiKey = require('./../.env').apiKey;
-// var parse = require('parse-link-header');
-
 
 exports.Repo = function() {};
 
@@ -22,10 +20,10 @@ exports.Repo.prototype.getRepo =function(userName, displayFunction){
 exports.Repo.prototype.getAllRepo = function(userName, displayFunction){
   $.get('https://api.github.com/users/'+ userName+ '/repos').then(function(repos_url){
     for(var i = 0; i<repos_url.length; i++){
-    $('.showRepo').append("<br><strong>reposiroty #"+(i+1) + "</strong> is " + repos_url[i].name + " And <em>description is: "+ repos_url[i].description +"</em>");
-  }
-    }).fail(function(error) {
-      $('.showRepo').text(error.responseJSON.message);
-    });
+      $('.showRepo').append("<br><strong>reposiroty #"+(i+1) + "</strong> is "+repos_url[i].name + " And <em>description is: "+ repos_url[i].description +"</em>"+"<a href='" + repos_url[i].html_url+ "'"+">"+ " link to "+repos_url[i].name);
+    }
+  }).fail(function(error) {
+    $('.showRepo').text(error.responseJSON.message);
+  });
 
 };
