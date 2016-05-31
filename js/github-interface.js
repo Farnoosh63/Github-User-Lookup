@@ -4,17 +4,13 @@ $(document).ready(function() {
   var repoObject =new Repo();
   $('#submit').click(function(event) {
 
-    $("#solution").show();
+    emptyPage();
+
     event.preventDefault();
     var userName = $('#userName').val();
     $('#userName').val("");
     repoObject.getRepo(userName,displayUserName);
     repoObject.getAllRepo(userName, displayDescription);
-
-    //refresh the page when the user want to look for another userName
-    $('#userName').click(function() {
-      window.location.reload();
-    });
   });
 });
 
@@ -27,4 +23,11 @@ var displayUserName = function(userName, UserNameData, fullNameData,avatarData, 
 
 var displayDescription = function(userName,number,repoName, time, descriptionData, htmlData) {
   $('.showRepo').append("<br><strong>reposiroty #"+number+"</strong> is "+repoName +" created at: "+ time + ", And <em>description is: "+ descriptionData +"</em>"+"<a href='" + htmlData+ "'"+">"+ " link to "+repoName);
+};
+
+var emptyPage = function(){
+  $('.showUserName').empty();
+  $(".showFullName").empty();
+  $(".showRepo").empty();
+  $(".showImage").empty();
 };
